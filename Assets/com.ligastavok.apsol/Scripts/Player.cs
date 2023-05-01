@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
 
             var direction = (end - (Vector2)transform.position).normalized;
 
-            var ball = Instantiate(GetBall(), Level.Instance.BallParent).GetComponent<Rigidbody2D>();
+            var ball = Instantiate(GetBall(), transform.parent).GetComponent<Rigidbody2D>();
 
             var animation = ball.GetComponent<Animation>();
             animation["spawn"].time = 1;

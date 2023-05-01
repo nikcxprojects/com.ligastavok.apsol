@@ -31,7 +31,7 @@ public class Level : MonoBehaviour
         var ballPrefabs = Resources.LoadAll<GameObject>("balls");
         var rdBalPrefab = ballPrefabs[Random.Range(0, ballPrefabs.Length)];
 
-        var ball = Instantiate(rdBalPrefab, transform).GetComponent<Ball>();
+        var ball = Instantiate(rdBalPrefab, BallParent).GetComponent<Ball>();
         ball.InRoadMap = true;
     }
 }

@@ -2297,6 +2297,8 @@ MonoBehaviour:
   game: {fileID: 1369043447}
   pause: {fileID: 1754920159}
   landOther: {fileID: 1279894998}
+  scoreText: {fileID: 1945085816}
+  finalScoreText: {fileID: 626931326}
 --- !u!1 &1870408235
 GameObject:
   m_ObjectHideFlags: 0

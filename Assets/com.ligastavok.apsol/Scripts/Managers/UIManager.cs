@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +8,7 @@ public class UIManager : MonoBehaviour
         get => FindObjectOfType<UIManager>(); 
     }
 
+    private int score;
     private GameObject _gameRef;
 
     [SerializeField] GameObject menu;
@@ -18,7 +18,22 @@ public class UIManager : MonoBehaviour
     [Space(10)]
     [SerializeField] GameObject landOther;
 
+    [Space(10)]
+    [SerializeField] Text scoreText;
+    [SerializeField] Text finalScoreText;
+
     public static bool IsOverlay;
+
+    private void Awake()
+    {
+        Ball.OnEquals += () =>
+        {
+            score += 10;
+
+            scoreText.text = $"{score}";
+            finalScoreText.text = $"SCORE {score}";
+        };
+    }
 
 
     private void Start()
@@ -34,6 +49,9 @@ public class UIManager : MonoBehaviour
 
     public void StartGame()
     {
+        score = 0;
+        scoreText.text = $"{score}";
+
         if (_gameRef)
         {
             Destroy(_gameRef);
