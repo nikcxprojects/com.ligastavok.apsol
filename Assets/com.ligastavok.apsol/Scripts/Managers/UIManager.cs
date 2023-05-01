@@ -50,7 +50,9 @@ public class UIManager : MonoBehaviour
     public void StartGame()
     {
         score = 0;
+
         scoreText.text = $"{score}";
+        finalScoreText.text = $"SCORE {score}";
 
         if (_gameRef)
         {
